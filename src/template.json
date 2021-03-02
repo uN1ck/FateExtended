@@ -1,10 +1,50 @@
 {
   "Actor": {
-    "types": [],
-    "templates": []
+    "types": ["character", "npc", "thing"],
+    "templates": {
+      "common": {
+        "aspects": {},
+        "skills": {},
+        "stunts": {},
+        "extras": {},
+        "tracks": {},
+        "info": {
+          "name": "",
+          "description": ""
+        },
+        "fate": {
+          "points": 0,
+          "refresh": 0
+        }
+      }
+    }
   },
   "Item": {
-    "types": [],
-    "templates": []
+    "types": ["Extra"],
+    "templates": {
+      "common": {
+        "description": {
+          "value": ""
+        }
+      }
+    },
+    "Extra": {
+      "templates": ["common"],
+      "permissions": "",
+      "costs": "",
+      "refresh":"",
+      "stunts":{},
+      "aspects":{},
+      "skills":{},
+      "tracks":{},
+      "actions": {
+        "overcome": "",
+        "create": "",
+        "attack": "",
+        "defend": ""
+      },
+      "countSkills": false,
+      "contents":{}
+    }
   }
 }

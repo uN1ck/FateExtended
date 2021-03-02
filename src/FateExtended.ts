@@ -4,46 +4,60 @@
  * Change this heading to be more descriptive to your system, or remove it.
  * Author: [your name]
  * Content License: [copyright and-or license] If using an existing system
- * 					you may want to put a (link to a) license or copyright
- * 					notice here (e.g. the OGL).
+ *                    you may want to put a (link to a) license or copyright
+ *                    notice here (e.g. the OGL).
  * Software License: [your license] Put your desired license here, which
- * 					 determines how others may use and modify your system
+ *                     determines how others may use and modify your system
  */
 
 // Import TypeScript modules
-import { registerSettings } from './module/settings.js';
-import { preloadTemplates } from './module/preloadTemplates.js';
+import {registerSettings} from './module/settings.js';
+import {preloadTemplates} from './module/preloadTemplates.js';
+import {FateActor} from "./module/actor/FateActor";
+import {FateItem} from "./module/item/FateItem";
+import {FateActorSheet} from "./module/actor/FateActorSheet";
+import {FateItemSheet} from "./module/item/FateItemSheet";
+import Constants from "./constants";
 
 /* ------------------------------------ */
 /* Initialize system					*/
 /* ------------------------------------ */
-Hooks.once('init', async function() {
-	console.log('FateExtended | Initializing FateExtended');
+Hooks.once('init', async function () {
+    console.log(Constants.MODULE_NAME + ' | Initializing FateExtended');
 
-	// Assign custom classes and constants here
-	
-	// Register custom system settings
-	registerSettings();
-	
-	// Preload Handlebars templates
-	await preloadTemplates();
+    // Assign custom classes and constants here
 
-	// Register custom sheets (if any)
+    // Register custom system settings
+    registerSettings();
+
+    // Preload Handlebars templates
+    await preloadTemplates();
+
+    // Register custom sheets (if any)
+    // Define custom Entity classes. This will override the default Actor and
+    // Item classes to instead use our extended versions.
+    CONFIG.Actor.entityClass = FateActor;
+    CONFIG.Item.entityClass = FateItem;
+
+    Actors.unregisterSheet("core", ActorSheet);
+    Actors.registerSheet(Constants.MODULE_NAME, FateActorSheet, {makeDefault: true});
+    Items.unregisterSheet("core", ItemSheet);
+    Items.registerSheet(Constants.MODULE_NAME, FateItemSheet, {makeDefault: true});
 });
 
 /* ------------------------------------ */
 /* Setup system							*/
 /* ------------------------------------ */
-Hooks.once('setup', function() {
-	// Do anything after initialization but before
-	// ready
+Hooks.once('setup', function () {
+    // Do anything after initialization but before
+    // ready
 });
 
 /* ------------------------------------ */
 /* When ready							*/
 /* ------------------------------------ */
-Hooks.once('ready', function() {
-	// Do anything once the system is ready
+Hooks.once('ready', function () {
+    // Do anything once the system is ready
 });
 
 // Add any additional hooks if necessary

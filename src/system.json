@@ -1,13 +1,13 @@
 {
   "name": "FateExtended",
-  "title": "FateExtended",
-  "description": "",
+  "title": "Fate Extended",
+  "description": "Extended Fate Core system, created for S.T.A.L.K.E.R.-like gameplay.",
   "version": "0.1.0",
-  "author": "",
+  "author": "GenSeck",
   "authors": [
     {
-      "name": "",
-      "email": "",
+      "name": "GenSeck",
+      "email": "qserxsdiv@mail.com",
       "url": ""
     }
   ],
@@ -18,8 +18,8 @@
   "languages": [],
   "gridDistance": 1,
   "gridUnits": "",
-  "minimumCoreVersion": "0.5.0",
-  "compatibleCoreVersion": "0.5.0",
+  "minimumCoreVersion": "0.7.9",
+  "compatibleCoreVersion": "0.7.9",
   "url": "",
   "manifest": "",
   "download": "",
