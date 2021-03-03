@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="292e851e-fb98-4ef5-825b-cd8d3601a057" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/constants.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/module/actor/FateActor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/module/actor/FateActorSheet.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/module/item/FateItem.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/module/item/FateItemSheet.ts" afterDir="false" />
+    <list default="true" id="292e851e-fb98-4ef5-825b-cd8d3601a057" name="Default Changelist" comment="Creating all foundry files">
+      <change afterPath="$PROJECT_DIR$/src/data/Definitions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FateExtended.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/FateExtended.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/system.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/actor/FateActor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/actor/FateActor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/actor/FateActorSheet.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/actor/FateActorSheet.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/settings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/settings.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/template.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/template.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/actor-sheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/actor-sheet.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,20 +56,42 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="JavaScript Debug.FondryRuntimeDebug">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/data" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.build:watch">
     <configuration name="FondryRuntimeDebug" type="JavascriptDebugType" uri="http://localhost:30000/" useFirstLineBreakpoints="true">
       <method v="2" />
     </configuration>
     <configuration name="foundry-0.7.9-core" type="NodeJSConfigurationType" path-to-js-file="main.js" working-dir="$PROJECT_DIR$/../foundry079/resources/app">
       <method v="2" />
     </configuration>
+    <configuration name="build:watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build:watch" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="JavaScript Debug.FondryRuntimeDebug" />
       <item itemvalue="Node.js.foundry-0.7.9-core" />
+      <item itemvalue="npm.build:watch" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build:watch" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -84,8 +105,18 @@
       <workItem from="1614602834201" duration="281000" />
       <workItem from="1614661003666" duration="3850000" />
       <workItem from="1614665961623" duration="741000" />
-      <workItem from="1614667221601" duration="2528000" />
+      <workItem from="1614667221601" duration="7965000" />
+      <workItem from="1614742658065" duration="8325000" />
+      <workItem from="1614756677801" duration="785000" />
     </task>
+    <task id="LOCAL-00001" summary="Creating all foundry files">
+      <created>1614670101419</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614670101419</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,6 +134,10 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Creating all foundry files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating all foundry files" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -118,5 +153,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -27,6 +27,7 @@ Hooks.once('init', async function () {
 
     // Assign custom classes and constants here
 
+
     // Register custom system settings
     registerSettings();
 
@@ -43,6 +44,8 @@ Hooks.once('init', async function () {
     Actors.registerSheet(Constants.MODULE_NAME, FateActorSheet, {makeDefault: true});
     Items.unregisterSheet("core", ItemSheet);
     Items.registerSheet(Constants.MODULE_NAME, FateItemSheet, {makeDefault: true});
+
+
 });
 
 /* ------------------------------------ */

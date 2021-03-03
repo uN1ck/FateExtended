@@ -3,11 +3,11 @@
     "types": ["character", "npc", "thing"],
     "templates": {
       "common": {
-        "aspects": {},
-        "skills": {},
-        "stunts": {},
-        "extras": {},
-        "tracks": {},
+        "aspects": [],
+        "skills": [],
+        "stunts": [],
+        "extras": [],
+        "tracks": [],
         "info": {
           "name": "",
           "description": ""
@@ -17,6 +17,17 @@
           "refresh": 0
         }
       }
+    },
+    "character": {
+      "templates": ["common"],
+      "bio": ""
+    },
+    "npc": {
+      "templates": ["common"],
+      "bio": ""
+    },
+    "thing": {
+      "templates": ["common"]
     }
   },
   "Item": {
@@ -32,11 +43,11 @@
       "templates": ["common"],
       "permissions": "",
       "costs": "",
-      "refresh":"",
-      "stunts":{},
-      "aspects":{},
-      "skills":{},
-      "tracks":{},
+      "refresh": "",
+      "stunts": {},
+      "aspects": {},
+      "skills": {},
+      "tracks": {},
       "actions": {
         "overcome": "",
         "create": "",
@@ -44,7 +55,7 @@
         "defend": ""
       },
       "countSkills": false,
-      "contents":{}
+      "contents": {}
     }
   }
 }
