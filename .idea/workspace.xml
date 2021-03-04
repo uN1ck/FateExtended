@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="292e851e-fb98-4ef5-825b-cd8d3601a057" name="Default Changelist" comment="Creating all foundry files">
-      <change afterPath="$PROJECT_DIR$/src/data/Definitions.ts" afterDir="false" />
+    <list default="true" id="292e851e-fb98-4ef5-825b-cd8d3601a057" name="Default Changelist" comment="Implementing interfaces above datamodel">
+      <change afterPath="$PROJECT_DIR$/src/templates/FateExtended.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FateExtended.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/FateExtended.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/FateExtended.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/fonts/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/cloner.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Definitions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Definitions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/module/actor/FateActor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/actor/FateActor.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/module/actor/FateActorSheet.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/actor/FateActorSheet.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/item/FateItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/item/FateItem.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/module/settings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/settings.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/system.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/template.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/template.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/templates/actor-sheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/actor-sheet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +25,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
         <option value="TypeScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -65,7 +71,7 @@
       <recent name="$PROJECT_DIR$/src/data" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build:watch">
+  <component name="RunManager" selected="JavaScript Debug.FondryRuntimeDebug">
     <configuration name="FondryRuntimeDebug" type="JavascriptDebugType" uri="http://localhost:30000/" useFirstLineBreakpoints="true">
       <method v="2" />
     </configuration>
@@ -107,7 +113,10 @@
       <workItem from="1614665961623" duration="741000" />
       <workItem from="1614667221601" duration="7965000" />
       <workItem from="1614742658065" duration="8325000" />
-      <workItem from="1614756677801" duration="785000" />
+      <workItem from="1614756677801" duration="4675000" />
+      <workItem from="1614769457649" duration="6396000" />
+      <workItem from="1614831997336" duration="9120000" />
+      <workItem from="1614866691625" duration="1428000" />
     </task>
     <task id="LOCAL-00001" summary="Creating all foundry files">
       <created>1614670101419</created>
@@ -116,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614670101419</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implementing interfaces above datamodel">
+      <created>1614760348511</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1614760348511</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +152,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creating all foundry files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating all foundry files" />
+    <MESSAGE value="Implementing interfaces above datamodel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing interfaces above datamodel" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

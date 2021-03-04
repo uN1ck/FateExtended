@@ -10,6 +10,8 @@ export interface ISkill {
     caa: string;
     attack: string;
     defend: string;
+    value: number;
+    modifiers: Array<ISkill>;
 }
 
 export interface IStunt {
@@ -32,6 +34,7 @@ export interface IExtra {
 
 export interface ITrack {
     name: string;
+    skill: string;
     slots: Array<ISlot>;
 }
 
@@ -46,7 +49,17 @@ export interface IActorData {
     stunts: Array<IStunt>;
     extras: Array<IExtra>;
     tracks: Array<ITrack>;
+    fate: {
+        points: number,
+        refresh: number,
+    }
+    info: {
+        name: string;
+        description: string,
+    }
+    advancedInfo?: any
 }
+
 
 export interface IItemData {
     //TODO: Impl

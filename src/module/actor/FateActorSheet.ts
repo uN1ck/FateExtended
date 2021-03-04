@@ -1,7 +1,8 @@
 import Constants from '../../constants';
-import {IAspect, ISkill, IStunt} from "../../data/Definitions";
+import {IActorData, IAspect, ISkill, IStunt} from "../../data/Definitions";
 
-export class FateActorSheet extends ActorSheet {
+
+export class FateActorSheet<T extends IActorData> extends ActorSheet<T> {
     static get defaultOptions() {
         let obj = mergeObject(super.defaultOptions, {
             classes: ["sheet", "actor"],
@@ -17,13 +18,16 @@ export class FateActorSheet extends ActorSheet {
     getData() {
         const data = super.getData();
         console.log("Data for Sheet", data)
+        let actorData: IActorData = data.data;
+        console.log("Actor Data for Sheet", actorData)
+
         return data;
     }
-}
 
-export interface IFateActorData {
-    aspects: Array<IAspect>;
-    skills: Array<ISkill>;
-    stunts: Array<IStunt>;
-    extras: Array<Object>; //TODO: Extras?
+    protected activateListeners(html: JQuery | HTMLElement) {
+        super.activateListeners(html);
+
+        if (!this.options.editable) return;
+
+    }
 }

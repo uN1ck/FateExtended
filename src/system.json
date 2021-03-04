@@ -13,7 +13,7 @@
   ],
   "scripts": [],
   "esmodules": ["FateExtended.js"],
-  "styles": ["FateExtended.css"],
+  "styles": ["templates/FateExtended.css"],
   "packs": [],
   "languages": [],
   "gridDistance": 1,

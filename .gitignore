@@ -4,3 +4,7 @@ dist/module
 dist/templates
 dist/**/*.js
 dist/**/*.json
+dist/*
+dist/**
+**/*mce.css
+**/*style.css
