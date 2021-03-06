@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="292e851e-fb98-4ef5-825b-cd8d3601a057" name="Default Changelist" comment="Time to change working machine">
+    <list default="true" id="292e851e-fb98-4ef5-825b-cd8d3601a057" name="Default Changelist" comment="Ported to JS x2">
+      <change afterPath="$PROJECT_DIR$/src/module/actor/GiveFatePointDialog.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cloner.sh" beforeDir="false" afterPath="$PROJECT_DIR$/cloner.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/actor-sheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/actor-sheet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/actor/FateActorSheet.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/actor/FateActorSheet.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/system.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,10 +22,16 @@
         <option value="HTML File" />
         <option value="TypeScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="js-port" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -69,16 +78,6 @@
     <configuration name="foundry-0.7.9-core" type="NodeJSConfigurationType" path-to-js-file="main.js" working-dir="$PROJECT_DIR$/../foundry079/resources/app">
       <method v="2" />
     </configuration>
-    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <configuration name="build:watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -93,12 +92,10 @@
       <item itemvalue="JavaScript Debug.FondryRuntimeDebug" />
       <item itemvalue="Node.js.foundry-0.7.9-core" />
       <item itemvalue="npm.build:watch" />
-      <item itemvalue="npm.build" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="npm.build:watch" />
-        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>

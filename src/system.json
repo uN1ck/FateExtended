@@ -12,8 +12,12 @@
     }
   ],
   "scripts": [],
-  "esmodules": ["FateExtended.js"],
-  "styles": ["templates/FateExtended.css"],
+  "esmodules": [
+    "FateExtended.js"
+  ],
+  "styles": [
+    "templates/FateExtended.css"
+  ],
   "packs": [],
   "languages": [],
   "gridDistance": 1,

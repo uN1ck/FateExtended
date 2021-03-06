@@ -481,6 +481,8 @@ function gitCommit() {
 }
 
 function cloneToServer() {
+    return Promise.resolve();
+
     exec('./cloner.sh', function (err, stdout, stderr) {
         console.log(stdout);
         console.log(stderr);
