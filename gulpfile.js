@@ -138,7 +138,7 @@ const tsConfig = ts.createProject('tsconfig.json', {
  * Build TypeScript
  */
 function buildTS() {
-    return gulp.src('src/**/*.ts').pipe(tsConfig()).pipe(gulp.dest('dist'));
+    return gulp.src('src/**/*.ts', 'src/**/*.js').pipe(tsConfig()).pipe(gulp.dest('dist'));
 }
 
 /**
@@ -200,6 +200,7 @@ function buildWatch() {
 
 /********************/
 /*		CLEAN		*/
+
 /********************/
 
 /**

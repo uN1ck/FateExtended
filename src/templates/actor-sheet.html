@@ -1,28 +1,45 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
 
     {{!-- Sheet Header --}}
-    <header class="sheet-header">
-        {{!-- Header stuff goes here --}}
-        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <header class="sheet-header char-header">
+        <div class="image-wrapper">
+            <img class="profile-img char-image" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="200"
+                 width="200"/>
+        </div>
         <div class="header-fields">
             <h1 class="charname">
                 <input name="name" type="text" value="{{actor.name}}" placeholder="Name"/>
             </h1>
-            <div class="fate-core-description grid grid-2col">
-                <div class="flexrow flex-center flex-between">
-                    <label for="data.fate.points">Fate Points available / refreshes</label>
-                    <div class="fate-points flex-row flex-group-center">
-                        <input type="text" id="data.fate.points" value="{{data.fate.points}}" data-dtype="Number">
-                        <input type="text" id="data.fate.refresh" value="{{data.fate.points}}" data-dtype="Number">
+            <div class="fate-core-description grid grid-4col">
+                <div class="fate-advanced-info flexrow flex-center flex-between">
+                    <div class="flex-group-center">
+                        <label for="data.fate.points">Fate points</label>
+                        <input type="text" id="data.fate.points" readonly
+                               value="{{data.fate.points}}"
+                               data-dtype="Number">
+                    </div>
+                    <div class="flex-group-center">
+                        <label for="data.fate.points">Refresh points</label>
+                        <input type="text" id="data.fate.refresh" readonly
+                               value="{{data.fate.refresh}}"
+                               data-dtype="Number">
+                    </div>
+                    <div class="flex-group-center">
+                        <label for="data.advancedInfo.refreshPointsLasts">Available refresh</label>
+                        <input type="text" id="data.advancedInfo.refreshPointsLasts"
+                               readonly
+                               value="{{data.advancedInfo.refreshPointsLasts}}" data-dtype="Number">
+                    </div>
+                    <div class="flex-group-center">
+                        <label for="data.advancedInfo.skillPointsLasts">Skill points</label>
+                        <input type="text" id="data.advancedInfo.skillPointsLasts"
+                               readonly
+                               value="{{data.advancedInfo.skillPointsLasts}}" data-dtype="Number">
                     </div>
                 </div>
-                <div class="flexrow flex-center flex-between">
-                    <label for="data.advancedInfo.refreshPointsLasts">Fate Points available / refreshes</label>
-                    <div class="fate-advanced-info flex-row flex-group-center">
-                        <input type="text" id="data.advancedInfo.refreshPointsLasts"
-                               value="{{data.advancedInfo.refreshPointsLasts}}" data-dtype="Number">
-                        <input type="text" id="data.advancedInfo.skillPointsLasts"
-                               value="{{data.advancedInfo.skillPointsLasts}}" data-dtype="Number">
+                <div class="fate-advanced-buttons flexrow flex-center flex-between">
+                    <div class="flex-group-center">
+                        <button class="fate-point-use" id="give-fate-point">Give Fate point</button>
                     </div>
                 </div>
             </div>

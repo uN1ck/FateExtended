@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="292e851e-fb98-4ef5-825b-cd8d3601a057" name="Default Changelist" comment="Ported to JS x2">
-      <change afterPath="$PROJECT_DIR$/src/module/actor/GiveFatePointDialog.js" afterDir="false" />
+    <list default="true" id="292e851e-fb98-4ef5-825b-cd8d3601a057" name="Default Changelist" comment="back fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloner.sh" beforeDir="false" afterPath="$PROJECT_DIR$/cloner.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module/actor/FateActorSheet.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/actor/FateActorSheet.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/system.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package/FateExtended-v0.1.0.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/actor-sheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/actor-sheet.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,12 +23,18 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="N1ck &lt;6werewolf$1&gt;" />
+      </list>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="js-port" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -71,11 +73,21 @@
       <recent name="$PROJECT_DIR$/src/data" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build:watch">
+  <component name="RunManager" selected="npm.build">
     <configuration name="FondryRuntimeDebug" type="JavascriptDebugType" uri="http://localhost:30000/" useFirstLineBreakpoints="true">
       <method v="2" />
     </configuration>
     <configuration name="foundry-0.7.9-core" type="NodeJSConfigurationType" path-to-js-file="main.js" working-dir="$PROJECT_DIR$/../foundry079/resources/app">
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="build:watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -92,9 +104,11 @@
       <item itemvalue="JavaScript Debug.FondryRuntimeDebug" />
       <item itemvalue="Node.js.foundry-0.7.9-core" />
       <item itemvalue="npm.build:watch" />
+      <item itemvalue="npm.build" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.build:watch" />
       </list>
     </recent_temporary>
@@ -140,7 +154,28 @@
       <option name="project" value="LOCAL" />
       <updated>1614870017444</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="back fixes">
+      <created>1615037343844</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1615037343844</updated>
+    </task>
+    <task id="LOCAL-00005" summary="back fixes">
+      <created>1615037368142</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1615037368142</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Ported to JS">
+      <created>1615037502395</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1615037502395</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +184,31 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Users/N1ck/WebstormProjects/FateExtended/src/templates" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
@@ -162,7 +222,9 @@
     <MESSAGE value="Creating all foundry files" />
     <MESSAGE value="Implementing interfaces above datamodel" />
     <MESSAGE value="Time to change working machine" />
-    <option name="LAST_COMMIT_MESSAGE" value="Time to change working machine" />
+    <MESSAGE value="back fixes" />
+    <MESSAGE value="Ported to JS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ported to JS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -176,6 +238,18 @@
           <url>file://$PROJECT_DIR$/../FateExtendedDev/src/module/actor/FateActorSheet.ts</url>
           <line>3</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/gulpfile.js</url>
+          <line>257</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/gulpfile.js</url>
+          <line>369</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
