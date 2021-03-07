@@ -24,6 +24,10 @@ export class FateActorSheet<T extends IActorData> extends ActorSheet<T> {
         super.activateListeners(html);
         if (!this.options.editable) return;
 
+        Game.create().then(value => {
+            console.log("OLOLO", value.)
+        })
+
         html.find('button#give-fate-point').on("click", this.handleGiveFatePoint.bind(this))
     }
 
@@ -31,6 +35,7 @@ export class FateActorSheet<T extends IActorData> extends ActorSheet<T> {
         console.log("EVARG", eventArg)
         const data = super.getData();
         let actorData: IActorData = data.data;
+
 
         let d = giveFatePointDialog();
         d.render(true);

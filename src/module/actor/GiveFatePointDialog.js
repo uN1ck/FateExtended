@@ -9,7 +9,8 @@ export const giveFatePointDialog = (actorData) => {
                 label: "Yes",
                 callback: () => {
 
-                    const messageData = {
+
+                    let mess = new ChatMessage({
                         user: game.user._id,
                         type: CONST.CHAT_MESSAGE_TYPES.EMOTE,
                         sound: CONFIG.sounds.dice,
@@ -17,10 +18,8 @@ export const giveFatePointDialog = (actorData) => {
                             flavour: "You gave Fate Point to <<NAME_PLACEHOLDER>>",
                             content: "Fate Point gaven..."
                         }
-                    };
-
-                    let mess = new ChatMessage(messageData, {});
-                    ChatLog.postOne(mess, true);
+                    }, {});
+                    chatLog.postOne(mess, true);
 
                     if (actorData.fate.points > 0) {
                         actorData.fate.points -= 1;

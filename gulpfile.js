@@ -138,7 +138,7 @@ const tsConfig = ts.createProject('tsconfig.json', {
  * Build TypeScript
  */
 function buildTS() {
-    return gulp.src('src/**/*.ts', 'src/**/*.js').pipe(tsConfig()).pipe(gulp.dest('dist'));
+    return gulp.src(['src/**/*.ts', 'src/**/*.js']).pipe(tsConfig()).pipe(gulp.dest('dist'));
 }
 
 /**
@@ -187,7 +187,7 @@ async function copyFiles() {
  * Watch for changes for each build step
  */
 function buildWatch() {
-    gulp.watch('src/**/*.ts', {ignoreInitial: false}, buildTS);
+    gulp.watch(['src/**/*.ts', 'src/**/*.js'], {ignoreInitial: false}, buildTS);
     gulp.watch('src/**/*.less', {ignoreInitial: false}, buildLess);
     gulp.watch('src/**/*.scss', {ignoreInitial: false}, buildSASS);
     gulp.watch(

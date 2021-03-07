@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="292e851e-fb98-4ef5-825b-cd8d3601a057" name="Default Changelist" comment="back fixes">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package/FateExtended-v0.1.0.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/actor-sheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/actor-sheet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/actor/FateActorSheet.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/actor/FateActorSheet.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/actor/GiveFatePointDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/actor/GiveFatePointDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/FateExtended.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/FateExtended.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,8 +77,8 @@
       <recent name="$PROJECT_DIR$/src/data" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
-    <configuration name="FondryRuntimeDebug" type="JavascriptDebugType" uri="http://localhost:30000/" useFirstLineBreakpoints="true">
+  <component name="RunManager" selected="JavaScript Debug.FondryRuntimeDebug">
+    <configuration name="FondryRuntimeDebug" type="JavascriptDebugType" uri="http://localhost:30000/">
       <method v="2" />
     </configuration>
     <configuration name="foundry-0.7.9-core" type="NodeJSConfigurationType" path-to-js-file="main.js" working-dir="$PROJECT_DIR$/../foundry079/resources/app">
@@ -100,16 +104,28 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="clean" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="clean" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="JavaScript Debug.FondryRuntimeDebug" />
       <item itemvalue="Node.js.foundry-0.7.9-core" />
       <item itemvalue="npm.build:watch" />
       <item itemvalue="npm.build" />
+      <item itemvalue="npm.clean" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.build:watch" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.clean" />
       </list>
     </recent_temporary>
   </component>
@@ -132,6 +148,7 @@
       <workItem from="1614831997336" duration="9120000" />
       <workItem from="1614866691625" duration="3169000" />
       <workItem from="1614924946239" duration="1248000" />
+      <workItem from="1615092927181" duration="502000" />
     </task>
     <task id="LOCAL-00001" summary="Creating all foundry files">
       <created>1614670101419</created>
@@ -175,11 +192,28 @@
       <option name="project" value="LOCAL" />
       <updated>1615037502395</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="back fixes">
+      <created>1615039158454</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1615039158454</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -222,9 +256,9 @@
     <MESSAGE value="Creating all foundry files" />
     <MESSAGE value="Implementing interfaces above datamodel" />
     <MESSAGE value="Time to change working machine" />
-    <MESSAGE value="back fixes" />
     <MESSAGE value="Ported to JS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ported to JS" />
+    <MESSAGE value="back fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="back fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -242,13 +276,11 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/gulpfile.js</url>
           <line>257</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/gulpfile.js</url>
           <line>369</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>

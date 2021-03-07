@@ -8,3 +8,4 @@ dist/*
 dist/**
 **/*mce.css
 **/*style.css
+.husky/**/*
