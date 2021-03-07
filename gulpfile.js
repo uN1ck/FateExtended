@@ -131,7 +131,6 @@ const tsConfig = ts.createProject('tsconfig.json', {
 
 /********************/
 /*		BUILD		*/
-
 /********************/
 
 /**

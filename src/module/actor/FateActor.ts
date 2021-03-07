@@ -70,6 +70,7 @@ export class FateActor extends Actor<Actor.Data<IActorData>, FateItem> {
             refreshPointsLasts: refreshPointsLasts,
             skillPointsLasts: skillPointsLasts
         }
+        data.fate.points = data.fate.points === null ? refreshPointsLasts : data.fate.points
 
         actorData.data = data;
         return actorData;

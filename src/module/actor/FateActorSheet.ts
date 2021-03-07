@@ -27,47 +27,55 @@ export class FateActorSheet extends ActorSheet<ActorSheet.Data, FateActor> {
         html.find('button#give-fate-point').on("click", this.handleGiveFatePoint.bind(this))
     }
 
-    handleGiveFatePoint(eventArg) {
-        console.log("EVARG", eventArg)
-        const data = this.actor.data.data;
+    async handleGiveFatePoint(eventArg) {
 
-        const fatePointDialog = new Dialog({
-            title: "Give Fate point?",
-            content: "",
+        const data = this.actor.data.data;
+        const actor = this.actor;
+
+        new Dialog({
+            title: game.i18n.localize("Actor.Sheet.GiveFatePointDialog.header"),
+            content: "<p>" +
+                game.i18n.localize("Actor.Sheet.GiveFatePointDialog.content") +
+                "</p>" +
+                "<input type=\"text\" id=\"fate-point-give-dialog\">",
             buttons: {
                 yes: {
                     icon: '<i class="fas fa-check"></i>',
-                    label: "Yes",
-                    callback: async () => {
-
-                        let mess: DeepPartial<ChatMessage.CreateData> = {
-                            _id: "", flags: undefined, speaker: undefined, timestamp: 0, whisper: undefined,
-                            user: game.user._id,
-                            type: CONST.CHAT_MESSAGE_TYPES.EMOTE,
-                            content: "Fate Point gaven..."
-                        };
-                        console.log("MSG", mess)
-                        let qq = await ChatMessage.create(mess)
-                        console.log("MSG-QQ", qq)
-                        ui.chat.postOne(qq).then(value => console.log("VVWW", value));
-
+                    label: game.i18n.localize("Dialog.Ok"),
+                    callback: async (html: JQuery) => {
                         if (data.fate.points > 0) {
                             data.fate.points -= 1;
-                        } else {
 
+                            const template = "systems/FateExtended/templates/chat/Message.html";
+                            let templateData = {
+                                header: game.i18n.localize("Actor.Sheet.GiveFatePointMessage.header"),
+                                templatedText: game.i18n.localize("Actor.Sheet.GiveFatePointMessage.content"),
+                                causeText: html.find("input#fate-point-give-dialog").val(),
+                                invokedBy: game.user.name
+                            };
+
+                            // @ts-ignore
+                            await ChatMessage.create({
+                                speaker: ChatMessage.getSpeaker({actor: actor}),
+                                timestamp: Date.now(),
+                                whisper: undefined,
+                                user: game.user._id,
+                                type: CONST.CHAT_MESSAGE_TYPES.EMOTE,
+                                content: await renderTemplate(template, templateData),
+                            })
+                        } else {
+                            //TODO: Make player know about failure
                         }
                     }
                 },
                 no: {
-                    label: "No",
-                    callback: () => {
+                    icon: '<i class="far fa-window-close"></i>',
+                    label: game.i18n.localize("Dialog.Cancel"),
+                    callback: (html: JQuery) => {
                     }
                 }
             },
             default: "no",
-            close: (html) => {
-                console.log("This always is logged no matter which option is chosen")
-            }
-        }, {}).render(true);
+        }).render(true);
     }
 }

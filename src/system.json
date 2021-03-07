@@ -16,10 +16,17 @@
     "FateExtended.js"
   ],
   "styles": [
-    "templates/FateExtended.css"
+    "templates/FateExtended.css",
+    "templates/PointColors.css"
   ],
   "packs": [],
-  "languages": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
   "gridDistance": 1,
   "gridUnits": "",
   "minimumCoreVersion": "0.7.9",
