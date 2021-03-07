@@ -60,7 +60,6 @@ export interface IActorData {
     advancedInfo?: any
 }
 
-
-export interface IItemData {
+export interface IItemData extends Item.Data {
     //TODO: Impl
 }

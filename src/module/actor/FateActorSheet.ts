@@ -1,10 +1,13 @@
 import Constants from '../../constants';
-import {IActorData} from "../../data/Definitions";
-import {giveFatePointDialog} from "./GiveFatePointDialog";
+import {IActorData, IItemData} from "../../data/Definitions";
+import {FateActor} from "./FateActor";
+import {FateItem} from "../item/FateItem";
 
 
-export class FateActorSheet<T extends IActorData> extends ActorSheet<T> {
+export class FateActorSheet<I extends FateItem<IItemData>,
+    A extends FateActor<Actor.Data<IActorData>, I>> extends ActorSheet<A, A> {
     static get defaultOptions() {
+        // @ts-ignore
         return mergeObject(super.defaultOptions, {
             classes: ["sheet", "actor"],
             template: "systems/" + Constants.MODULE_NAME + "/templates/actor-sheet.html",
@@ -16,17 +19,14 @@ export class FateActorSheet<T extends IActorData> extends ActorSheet<T> {
 
     getData() {
         const data = super.getData();
-        let actorData: IActorData = data.data;
+
         return data;
     }
 
-    protected activateListeners(html: JQuery) {
+    activateListeners(html: JQuery) {
         super.activateListeners(html);
         if (!this.options.editable) return;
 
-        Game.create().then(value => {
-            console.log("OLOLO", value.)
-        })
 
         html.find('button#give-fate-point').on("click", this.handleGiveFatePoint.bind(this))
     }
@@ -34,10 +34,46 @@ export class FateActorSheet<T extends IActorData> extends ActorSheet<T> {
     handleGiveFatePoint(eventArg) {
         console.log("EVARG", eventArg)
         const data = super.getData();
-        let actorData: IActorData = data.data;
+        //this.actor.data.data
 
+        const fatePointDialog = new Dialog({
+            title: "Give Fate point?",
+            content: "",
+            buttons: {
+                yes: {
+                    icon: '<i class="fas fa-check"></i>',
+                    label: "Yes",
+                    callback: () => {
 
-        let d = giveFatePointDialog();
-        d.render(true);
+                        let mess = new ChatMessage({
+                            user: game.user._id,
+                            type: CONST.CHAT_MESSAGE_TYPES.EMOTE,
+                            sound: CONFIG.sounds.notification,
+                            message: {
+                                flavour: "You gave Fate Point to <<NAME_PLACEHOLDER>>",
+                                content: "Fate Point gaven..."
+                            }
+                        }, {});
+                        chatLog.postOne(mess, true);
+
+                        if (actorData.fate.points > 0) {
+                            actorData.fate.points -= 1;
+                        } else {
+
+                        }
+                    }
+                },
+                no: {
+                    label: "No",
+                    callback: () => {
+                    }
+                }
+            },
+            default: "no",
+            close: (html) => {
+                console.log("This always is logged no matter which option is chosen")
+            }
+        }, {});
+        fatePointDialog.render();
     }
 }
