@@ -3,13 +3,12 @@ import Constants from "../../constants";
 import {CONFIG_HEALTH_SKILL, CONFIG_REFRESH_POINTS, CONFIG_SKILL_POINTS} from "../settings";
 import {IActorData, IExtra, IItemData, ISkill, ISlot, IStunt, ITrack} from "../../data/Definitions";
 
-export class FateActor extends Actor<Actor.Data<IActorData>, FateItem<IItemData>> {
+export class FateActor extends Actor<Actor.Data<IActorData>, FateItem> {
 
     prepareData() {
         super.prepareData();
 
         const actorData: Actor.Data<IActorData> = this.data;
-
         //TODO: wrong way here?
         this.data = this._prepareCommonData(actorData);
         console.log("-->Actor Data Here", actorData)
