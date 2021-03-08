@@ -5,16 +5,13 @@ import {IActorData, IExtra, IItemData, ISkill, ISlot, IStunt, ITrack} from "../.
 
 export class FateActor extends Actor<Actor.Data<IActorData>, FateItem> {
 
-    prepareData() {
-        super.prepareData();
+    /**
+     * Prepares any actor-specific data
+     */
+    prepareBaseData() {
+        super.prepareBaseData();
 
         const actorData: Actor.Data<IActorData> = this.data;
-        //TODO: wrong way here?
-        this.data = this._prepareCommonData(actorData);
-        console.log("-->Actor Data Here", actorData)
-    }
-
-    private _prepareCommonData(actorData: any) {
         const data: IActorData = actorData.data;
 
         //FatePoints
@@ -47,6 +44,26 @@ export class FateActor extends Actor<Actor.Data<IActorData>, FateItem> {
             }
         })
 
+        //Building an advanced info object
+        data.advancedInfo = {
+            health: {max: maxHealth, real: realHealth},
+            refreshPointsLasts: refreshPointsLasts,
+            skillPointsLasts: skillPointsLasts
+        }
+        data.fate.points = data.fate.points === null ? refreshPointsLasts : data.fate.points
+
+        actorData.data = data;
+    }
+
+    /**
+     * Prepares any item-specific data
+     */
+    prepareDerivedData() {
+        super.prepareDerivedData();
+
+        const actorData: Actor.Data<IActorData> = this.data;
+        const data: IActorData = actorData.data;
+
         //Extras
         data.extras.forEach((item: IExtra) => {
             data.stunts.push(...item.stunts)
@@ -64,16 +81,8 @@ export class FateActor extends Actor<Actor.Data<IActorData>, FateItem> {
             data.aspects.push(...item.aspects)
         })
 
-        //Building an advanced info object
-        data.advancedInfo = {
-            health: {max: maxHealth, real: realHealth},
-            refreshPointsLasts: refreshPointsLasts,
-            skillPointsLasts: skillPointsLasts
-        }
-        data.fate.points = data.fate.points === null ? refreshPointsLasts : data.fate.points
+        //todo: refreshes and health updates by extra here
 
         actorData.data = data;
-        return actorData;
     }
-
 }

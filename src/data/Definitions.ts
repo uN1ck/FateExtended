@@ -57,7 +57,12 @@ export interface IActorData {
         name: string;
         description: string,
     }
-    advancedInfo?: any
+    advancedInfo?: {
+        health: { max: number, real: number },
+        refreshPointsLasts: number,
+        skillPointsLasts: number
+        [x: string]: any
+    }
 }
 
 export interface IItemData extends Item.Data {

@@ -7,7 +7,8 @@
       },
       "GiveFatePointMessage": {
         "header": "Fate Point use!",
-        "content": "Fate Point (+2 or Re-Roll) given for"
+        "content": "Fate Point (+2 or Re-Roll) given for",
+        "invokedBy": "Invoked by"
       }
     }
   },

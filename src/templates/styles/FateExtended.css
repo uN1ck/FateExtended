@@ -31,6 +31,14 @@
 
 
 /** ====================================================================
+ * Dialog styles
+ */
+
+.fex-dialog {
+    margin: 5px;
+}
+
+/** ====================================================================
  * Chat styles
  */
 
@@ -67,6 +75,12 @@
 
 .fex-chat-message .fex-body-obligatory-text {
     font-weight: bold;
+}
+
+.fex-chat-message .fex-footer {
+    border-top: 1px solid #782e22;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 @font-face {
