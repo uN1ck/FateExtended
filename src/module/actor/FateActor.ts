@@ -6,7 +6,7 @@ import {IActorData, IExtra, IItemData, ISkill, ISlot, IStunt, ITrack} from "../.
 export class FateActor extends Actor<Actor.Data<IActorData>, FateItem> {
 
     /**
-     * Prepares any actor-specific data
+     * Method prepares any actor-specific data
      */
     prepareBaseData() {
         super.prepareBaseData();
@@ -56,7 +56,7 @@ export class FateActor extends Actor<Actor.Data<IActorData>, FateItem> {
     }
 
     /**
-     * Prepares any item-specific data
+     * Method prepares any item-specific data
      */
     prepareDerivedData() {
         super.prepareDerivedData();
@@ -85,4 +85,5 @@ export class FateActor extends Actor<Actor.Data<IActorData>, FateItem> {
 
         actorData.data = data;
     }
+
 }

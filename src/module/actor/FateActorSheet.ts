@@ -1,8 +1,10 @@
 import Constants from '../../constants';
 import {FateActor} from "./FateActor";
+import {GiveFatePointDialogFactory} from "../components/GiveFatePointDialogFactory";
 
+export class FateActorSheet extends ActorSheet<ActorSheet.Data<FateActor>, FateActor> {
+    private dialogFactory: GiveFatePointDialogFactory = new GiveFatePointDialogFactory();
 
-export class FateActorSheet extends ActorSheet<ActorSheet.Data, FateActor> {
     static get defaultOptions() {
         const options = super.defaultOptions;
 
@@ -20,9 +22,10 @@ export class FateActorSheet extends ActorSheet<ActorSheet.Data, FateActor> {
         });
     }
 
-    getData() {
-        const data = super.getData();
-
+    async getData(): Promise<ActorSheet.Data> {
+        const data = await super.getData();
+        if (data.data.fate.points === 0)
+            data.data.advancedInfo.isGiveFatePointButtonDisabled = "disabled";
         return data;
     }
 
@@ -33,10 +36,7 @@ export class FateActorSheet extends ActorSheet<ActorSheet.Data, FateActor> {
         html.find('button#give-fate-point').on("click", this.handleGiveFatePoint.bind(this))
     }
 
-    async handleGiveFatePoint(eventArg) {
-
-        const data = this.actor.data.data;
-        const actor = this.actor;
-
+    handleGiveFatePoint(eventArg) {
+        this.dialogFactory.newDialog(this).then(dialog => dialog.render(true));
     }
 }

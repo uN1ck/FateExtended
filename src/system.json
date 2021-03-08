@@ -16,8 +16,8 @@
     "FateExtended.js"
   ],
   "styles": [
-    "templates/FateExtended.css",
-    "templates/PointColors.css"
+    "templates/styles/FateExtended.css",
+    "templates/styles/PointColors.css"
   ],
   "packs": [],
   "languages": [
