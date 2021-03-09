@@ -1,0 +1,21 @@
+{
+  "Actor": {
+    "Sheet": {
+      "GiveFatePointDialog": {
+        "header": "Fate Point give cause?",
+        "content": "Describe the cause? print the name of recipient..."
+      },
+      "GiveFatePointMessage": {
+        "header": "Fate Point use!",
+        "content": "Fate Point (+2 or Re-Roll) given for",
+        "invokedBy": "Invoked by"
+      }
+    }
+  },
+  "Dialog": {
+    "Yes": "Yes",
+    "No": "No",
+    "Ok": "Ok",
+    "Cancel": "Cancel"
+  }
+}

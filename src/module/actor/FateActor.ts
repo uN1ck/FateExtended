@@ -3,19 +3,24 @@ import Constants from "../../constants";
 import {CONFIG_HEALTH_SKILL, CONFIG_REFRESH_POINTS, CONFIG_SKILL_POINTS} from "../settings";
 import {IActorData, IExtra, IItemData, ISkill, ISlot, IStunt, ITrack} from "../../data/Definitions";
 
-export class FateActor extends Actor<Actor.Data<IActorData>, FateItem<IItemData>> {
+export class FateActor extends Actor<Actor.Data<IActorData>, FateItem> {
 
-    prepareData() {
-        super.prepareData();
-
-        const actorData: Actor.Data<IActorData> = this.data;
-
-        //TODO: wrong way here?
-        this.data = this._prepareCommonData(actorData);
-        console.log("-->Actor Data Here", actorData)
+    constructor(data: DeepPartial<Actor.Data<IActorData>>, options: Entity.CreateOptions) {
+        super(data, options);
     }
 
-    private _prepareCommonData(actorData: any) {
+    update<U>(data: Expanded<U> extends DeepPartial<Actor.Data<IActorData>> ? U : never, options?: Entity.UpdateOptions): Promise<this> {
+        console.log("UPDATE HAPPEND", data, options)
+        return super.update(data, options);
+    }
+
+    /**
+     * Method prepares any actor-specific data
+     */
+    prepareBaseData() {
+        super.prepareBaseData();
+
+        const actorData: Actor.Data<IActorData> = this.data;
         const data: IActorData = actorData.data;
 
         //FatePoints
@@ -48,6 +53,26 @@ export class FateActor extends Actor<Actor.Data<IActorData>, FateItem<IItemData>
             }
         })
 
+        //Building an advanced info object
+        data.advancedInfo = {
+            health: {max: maxHealth, real: realHealth},
+            refreshPointsLasts: refreshPointsLasts,
+            skillPointsLasts: skillPointsLasts
+        }
+        console.log("LOGGG", data)
+        data.fate.points = data.fate.points === null ? refreshPointsLasts : data.fate.points
+
+    }
+
+    /**
+     * Method prepares any item-specific data
+     */
+    prepareDerivedData() {
+        super.prepareDerivedData();
+
+        const actorData: Actor.Data<IActorData> = this.data;
+        const data: IActorData = actorData.data;
+
         //Extras
         data.extras.forEach((item: IExtra) => {
             data.stunts.push(...item.stunts)
@@ -65,15 +90,8 @@ export class FateActor extends Actor<Actor.Data<IActorData>, FateItem<IItemData>
             data.aspects.push(...item.aspects)
         })
 
-        //Building an advanced info object
-        data.advancedInfo = {
-            health: {max: maxHealth, real: realHealth},
-            refreshPointsLasts: refreshPointsLasts,
-            skillPointsLasts: skillPointsLasts
-        }
+        //todo: refreshes and health updates by extra here
 
-        actorData.data = data;
-        return actorData;
     }
 
 }
