@@ -5,6 +5,15 @@ import {IActorData, IExtra, IItemData, ISkill, ISlot, IStunt, ITrack} from "../.
 
 export class FateActor extends Actor<Actor.Data<IActorData>, FateItem> {
 
+    constructor(data: DeepPartial<Actor.Data<IActorData>>, options: Entity.CreateOptions) {
+        super(data, options);
+    }
+
+    update<U>(data: Expanded<U> extends DeepPartial<Actor.Data<IActorData>> ? U : never, options?: Entity.UpdateOptions): Promise<this> {
+        console.log("UPDATE HAPPEND", data, options)
+        return super.update(data, options);
+    }
+
     /**
      * Method prepares any actor-specific data
      */
@@ -50,9 +59,9 @@ export class FateActor extends Actor<Actor.Data<IActorData>, FateItem> {
             refreshPointsLasts: refreshPointsLasts,
             skillPointsLasts: skillPointsLasts
         }
+        console.log("LOGGG", data)
         data.fate.points = data.fate.points === null ? refreshPointsLasts : data.fate.points
 
-        actorData.data = data;
     }
 
     /**
@@ -83,7 +92,6 @@ export class FateActor extends Actor<Actor.Data<IActorData>, FateItem> {
 
         //todo: refreshes and health updates by extra here
 
-        actorData.data = data;
     }
 
 }

@@ -37,6 +37,11 @@ export class FateActorSheet extends ActorSheet<ActorSheet.Data<FateActor>, FateA
     }
 
     handleGiveFatePoint(eventArg) {
-        this.dialogFactory.newDialog(this).then(dialog => dialog.render(true));
+        this.dialogFactory.newDialog(this.actor,
+            () => {
+                this.actor.update(this.actor.data)
+                this.render(true);
+            }).then(dialog => dialog.render(true));
     }
+
 }

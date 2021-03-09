@@ -1,5 +1,3 @@
-import {FateActor} from "../actor/FateActor";
-import {IActorData} from "../../data/Definitions";
 import {FateActorSheet} from "../actor/FateActorSheet";
 
 export class GiveFatePointDialogFactory {
@@ -7,7 +5,7 @@ export class GiveFatePointDialogFactory {
     dialogTemplate = "systems/FateExtended/templates/chat/GiveFatePointDialog.html";
     messageTemplate = "systems/FateExtended/templates/chat/Message.html";
 
-    async newDialog(fateActorSheet: FateActorSheet): Promise<Dialog> {
+    async newDialog(fateActor: Actor, callback: () => any): Promise<Dialog> {
         return new Dialog({
             title: game.i18n.localize("Actor.Sheet.GiveFatePointDialog.header"),
             content: await renderTemplate(this.dialogTemplate,
@@ -17,13 +15,14 @@ export class GiveFatePointDialogFactory {
                     icon: '<i class="fas fa-check"></i>',
                     label: game.i18n.localize("Dialog.Ok"),
                     callback: async (html: JQuery) => {
-                        if (fateActorSheet.actor.data.data.fate.points > 0) {
-                            fateActorSheet.actor.data.data.fate.points -= 1;
+                        if (fateActor.data.data.fate.points > 0) {
+                            fateActor.data.data.fate.points -= 1;
 
                             let message: DeepPartial<ChatMessage.CreateData> = await this.newFatePointMessage(html);
-                            message.speaker = ChatMessage.getSpeaker({actor: fateActorSheet.actor});
+                            message.speaker = ChatMessage.getSpeaker({actor: fateActor});
                             await ChatMessage.create(message);
-                            fateActorSheet.render(true);
+
+                            callback();
 
                         } else {
                             //TODO: Make player know about failure?

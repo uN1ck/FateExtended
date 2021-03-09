@@ -16,7 +16,7 @@
 }
 
 .fate-point-use {
-
+    margin: 0px;
 }
 
 .flexrow {
@@ -43,7 +43,7 @@
  */
 
 .fex-chat-message {
-
+    display: grid;
 }
 
 .fex-chat-message > .fex-header {
@@ -51,18 +51,15 @@
 }
 
 .fex-chat-message > .fex-body {
-    display: block;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
 }
 
 .fex-chat-message .fex-text {
-    width: 70%;
-    display: inline-block;
     word-break: break-word;
 }
 
 .fex-chat-message .fex-message-symbol {
-    width: 25%;
-    display: inline-block;
     font-family: "Fate Icons";
 }
 
