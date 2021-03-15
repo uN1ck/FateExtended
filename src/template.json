@@ -1,37 +1,37 @@
 {
   "Actor": {
-    "types":     ["character", "npc", "thing"],
+    "types": ["character", "npc", "thing"],
     "templates": {
       "common": {
         "aspects": [],
-        "skills":  [],
-        "stunts":  [],
-        "extras":  [],
-        "tracks":  [],
-        "info":    {
-          "name":        "",
+        "skills": [],
+        "stunts": [],
+        "extras": [],
+        "tracks": [],
+        "info": {
+          "name": "",
           "description": ""
         },
-        "fate":    {
-          "points":  null,
+        "fate": {
+          "points": null,
           "refresh": 0
         }
       }
     },
     "character": {
       "templates": ["common"],
-      "bio":       ""
+      "bio": ""
     },
-    "npc":       {
+    "npc": {
       "templates": ["common"],
-      "bio":       ""
+      "bio": ""
     },
-    "thing":     {
+    "thing": {
       "templates": ["common"]
     }
   },
-  "Item":  {
-    "types":     ["Extra"],
+  "Item": {
+    "types": ["Extra", "Skill"],
     "templates": {
       "common": {
         "description": {
@@ -39,23 +39,32 @@
         }
       }
     },
-    "Extra":     {
-      "templates":   ["common"],
+    "Extra": {
+      "templates": ["common"],
       "permissions": "",
-      "costs":       "",
-      "refresh":     "",
-      "aspects":     [],
-      "skills":      [],
-      "stunts":      [],
-      "tracks":      [],
-      "actions":     {
+      "costs": "",
+      "refresh": "",
+      "aspects": [],
+      "skills": [],
+      "stunts": [],
+      "tracks": [],
+      "actions": {
         "overcome": "",
-        "create":   "",
-        "attack":   "",
-        "defend":   ""
+        "create": "",
+        "attack": "",
+        "defend": ""
       },
       "countSkills": false,
-      "contents":    {}
+      "contents": {}
+    },
+    "Skill": {
+      "templates": ["common"],
+      "rank": 0
+    },
+    "Aspect": {
+      "label": "",
+      "name": "",
+      "description": ""
     }
   }
 }

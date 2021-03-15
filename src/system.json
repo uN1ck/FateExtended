@@ -17,7 +17,8 @@
   ],
   "styles": [
     "templates/styles/FateExtended.css",
-    "templates/styles/PointColors.css"
+    "templates/styles/PointColors.css",
+    "templates/styles/FateActor.css"
   ],
   "packs": [],
   "languages": [

@@ -1,7 +1,8 @@
 import {FateItem} from "../item/FateItem";
 import Constants from "../../constants";
 import {CONFIG_HEALTH_SKILL, CONFIG_REFRESH_POINTS, CONFIG_SKILL_POINTS} from "../settings";
-import {IActorData, IExtra, IItemData, ISkill, ISlot, IStunt, ITrack} from "../../data/Definitions";
+import {IExtra, IItemData, ISkill, ISlot, IStunt, ITrack} from "../../data/Definitions";
+import {IActorData} from "../../data/IActorData";
 
 export class FateActor extends Actor<Actor.Data<IActorData>, FateItem> {
 
@@ -10,8 +11,17 @@ export class FateActor extends Actor<Actor.Data<IActorData>, FateItem> {
     }
 
     update<U>(data: Expanded<U> extends DeepPartial<Actor.Data<IActorData>> ? U : never, options?: Entity.UpdateOptions): Promise<this> {
-        console.log("UPDATE HAPPEND", data, options)
+        console.log("UPDATE HAPPEN", data, options)
         return super.update(data, options);
+    }
+
+    //TODO: Нужен ли?
+    saveAndFlush() {
+        this.update(this.data, {})
+    }
+
+    protected _onCreate(data: Actor.Data<IActorData>, options: any, userId: string) {
+        super._onCreate(data, options, userId);
     }
 
     /**

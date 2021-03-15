@@ -190,11 +190,11 @@ function buildWatch() {
     gulp.watch('src/**/*.less', {ignoreInitial: false}, buildLess);
     gulp.watch('src/**/*.scss', {ignoreInitial: false}, buildSASS);
     gulp.watch(
-        ['src/fonts', 'src/lang', 'src/templates', 'src/*.json'],
+        ['src/fonts', 'src/lang', 'src/templates/**', 'src/*.json'],
         {ignoreInitial: false},
         copyFiles
     );
-    gulp.watch('dist/**/*', {ignoreInitial: false}, cloneToServer)
+    //gulp.watch('dist/**/*', {ignoreInitial: false}, cloneToServer)
 }
 
 /********************/
