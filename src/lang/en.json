@@ -12,6 +12,14 @@
       }
     }
   },
+  "Aspect": {
+    "Edit": {
+      "EditAspectFormTitle": "Edit Aspect",
+      "Description": "Description",
+      "Label": "Aspect type",
+      "Name": "Aspect"
+    }
+  },
   "Dialog": {
     "Yes": "Yes",
     "No": "No",

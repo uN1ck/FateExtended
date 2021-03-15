@@ -1,0 +1,58 @@
+.fex-fate-actor {
+    align-items: baseline;
+}
+
+.fex-fate-actor .fex-fate-actor-header {
+    height: 220px;
+    display: block !important;
+}
+
+.fex-fate-actor .fex-fate-actor-header .fex-header-wrapper {
+    display: grid;
+    grid-template-columns: 220px 2fr;
+    align-items: flex-start;
+}
+
+.fex-fate-actor .fex-fate-actor-header .fex-content-wrapper {
+    vertical-align: top;
+    position: center;
+}
+
+img.fex-avatar-image {
+    width: auto;
+    max-height: 200px;
+    min-width: 100px;
+    min-height: 100px;
+    margin: 8px;
+    border: none !important;
+}
+
+.fex-fate-actor .fex-fate-actor-header .fex-fate-core-description {
+
+}
+
+.fex-fate-core-description input {
+
+}
+
+
+.fex-fate-core-description .fex-core-parameters-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.fex-fate-core-description .fex-label {
+    min-width: 100px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.fex-core-parameters-row .fex-core-parameters-cell {
+    padding: 2px;
+
+}
+
+.fex-fate-core-description .fex-fate-point-buttons {
+    align-self: end;
+}

@@ -1,8 +1,4 @@
-export interface IAspect {
-    label: string;
-    name: string;
-    description: string;
-}
+import {IAspect} from "./IAspect";
 
 export interface ISkill {
     name: string;
@@ -43,28 +39,6 @@ export interface ISlot {
     checked: boolean
 }
 
-export interface IActorData {
-    aspects: Array<IAspect>;
-    skills: Array<ISkill>;
-    stunts: Array<IStunt>;
-    extras: Array<IExtra>;
-    tracks: Array<ITrack>;
-    fate: {
-        points: number,
-        refresh: number,
-    }
-    info: {
-        name: string;
-        description: string,
-    }
-    advancedInfo?: {
-        health: { max: number, real: number },
-        refreshPointsLasts: number,
-        skillPointsLasts: number
-        [x: string]: any
-    }
-}
-
-export interface IItemData extends Item.Data {
+export interface IItemData<D> extends Item.Data<D> {
     //TODO: Impl
 }
