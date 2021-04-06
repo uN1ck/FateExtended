@@ -1,1 +1,0 @@
-# rsync -au --delete "/Users/nick/WebstormProjects/FateExtended/dist/" "/Volumes/RemoteFolder/foundrydata/Data/systems/FateExtended"

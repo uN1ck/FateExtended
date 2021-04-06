@@ -13,13 +13,9 @@
   ],
   "scripts": [],
   "esmodules": [
-    "FateExtended.js"
+    "system.js"
   ],
-  "styles": [
-    "templates/styles/FateExtended.css",
-    "templates/styles/PointColors.css",
-    "templates/styles/FateActor.css"
-  ],
+  "styles": [],
   "packs": [],
   "languages": [
     {

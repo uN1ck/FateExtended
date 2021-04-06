@@ -1,7 +1,8 @@
-export const preloadTemplates = async function() {
-	const templatePaths = [
-		// Add paths to "systems/FateExtended/templates"
-	];
+import "../../system/templates/**/*.hbs"
 
-	return loadTemplates(templatePaths);
+export const preloadTemplates = async function () {
+    // @ts-ignore
+    const templatePaths = [__ALL_TEMPLATES__];
+
+    return loadTemplates(templatePaths);
 }

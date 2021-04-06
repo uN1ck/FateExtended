@@ -9,34 +9,28 @@
         "extras": [],
         "tracks": [],
         "info": {
-          "name": "",
           "description": ""
         },
         "fate": {
-          "points": null,
-          "refresh": 0
+          "points": null
         }
       }
     },
     "character": {
-      "templates": ["common"],
-      "bio": ""
+      "templates": ["common"]
     },
     "npc": {
-      "templates": ["common"],
-      "bio": ""
+      "templates": ["common"]
     },
     "thing": {
       "templates": ["common"]
     }
   },
   "Item": {
-    "types": ["Extra", "Skill"],
+    "types": ["Extra", "Skill", "Aspect", "Track", "Stunt"],
     "templates": {
       "common": {
-        "description": {
-          "value": ""
-        }
+        "name": ""
       }
     },
     "Extra": {
