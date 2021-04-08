@@ -15,13 +15,15 @@
   "esmodules": [
     "system.js"
   ],
-  "styles": [],
+  "styles": [
+    "templates/CharList.css"
+  ],
   "packs": [],
   "languages": [
     {
       "lang": "en",
       "name": "English",
-      "path": "lang/en.json"
+      "path": "languages/en.json"
     }
   ],
   "gridDistance": 1,

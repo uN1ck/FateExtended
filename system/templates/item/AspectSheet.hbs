@@ -1,24 +1,27 @@
-<div class="form-group">
-    <div class="form-fields">
-        <div class="col-xs col-sm col-md col-lg">
-            <label for="aspect-label-value">{{data.localization.label}}</label>
-            <input id="aspect-label-value" value="{{data.label}}">
+<form autocomplete="off" class="{{cssClass}} flexcol">
+    <div class="form-group form-group-stacked">
+        <div class="form-fields">
+            {{> "systems/FateExtended/templates/item/parts/TextInput.hbs"
+                    headline="aspect.form.name"
+                    field=data.name
+                    fieldName="data.name"
+            }}
+        </div>
+        <div class="form-fields">
+            {{> "systems/FateExtended/templates/item/parts/TextInput.hbs"
+                    headline="aspect.form.label"
+                    field=data.label
+                    fieldName="data.label"
+            }}
+        </div>
+        <div class="form-fields">
+            {{> "systems/FateExtended/templates/item/parts/TextArea.hbs"
+                    headline="aspect.form.description"
+                    field=data.description
+                    fieldName="data.description"
+            }}
         </div>
     </div>
-    <div class="form-fields">
-        <div class="col-xs col-sm col-md col-lg">
-            <label for="aspect-name-value">{{data.localization.name}}</label>
-            <input id="aspect-name-value" value="{{data.name}}">
-        </div>
-    </div>
-    <div class="form-fields">
-        <div class="col-xs col-sm col-md col-lg">
-            <label for="aspect-description-value">{{data.localization.description}}</label>
-            <textarea id="aspect-description-value" cols="3">
-                {{data.description}}
-            </textarea>
-        </div>
-    </div>
-</div>
+</form>
 
 

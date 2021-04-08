@@ -1,0 +1,16 @@
+<div class="fex-input-row">
+    <h2 class="fex-input-headline">
+        <span>{{localize headline}}</span>
+    </h2>
+    <label for="{{fieldName}}">
+        {{#if help}}<span class="fex-help-text">{{localize help}}</span>{{/if}}
+        <input
+                type="text"
+                class="fex-input"
+                name="{{fieldName}}"
+                value="{{field}}"
+                {{#if placeholder }}placeholder="{{ localize placeholder}}" {{/if}}
+            {{#if dtype }}data-dtype="{{ dtype }}"{{/if}}
+        />
+    </label>
+</div>

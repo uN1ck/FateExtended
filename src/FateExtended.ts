@@ -33,6 +33,7 @@ Hooks.once('init', async function () {
 
     // Preload Handlebars templates
     await preloadTemplates();
+    // Register HandlebarsHelpers
 
     // Register custom sheets (if any)
     // Define custom Entity classes. This will override the default Actor and

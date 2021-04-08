@@ -8,15 +8,10 @@ import {FateItem} from "./FateItem";
  * @template T - класс-описание внутренней структуры данных.
  * @template E - entity-класс, хранимый в БД Foundry.
  */
-export class FateItemSheet<Data extends IItem, Entity extends FateItem<Data>>
+export abstract class FateItemSheet<Data extends IItem, Entity extends FateItem<Data>>
     extends ItemSheet<Item.Data<Data>, Entity> {
 
-    static get defaultOptions() {
-        return super.defaultOptions;
-    }
-
     get template(): string {
-        console.log("DATA", this.item.data);
         return `${Constants.TEMPLATES_ROOT_PATH}item/${this.item.data.type}Sheet.hbs`;
     }
 
