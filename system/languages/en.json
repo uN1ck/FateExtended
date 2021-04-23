@@ -17,10 +17,17 @@
       "story": "История",
       "detail": "Деталь"
     },
-    "form": {
-      "label": "Метка",
-      "name": "Название",
-      "description": "Описание"
+    "sheet": {
+      "buttons": {
+        "editMode": "Редактировать",
+        "watchMode": "Демонстрировать",
+        "roll": "Бросить в чат"
+      },
+      "form": {
+        "label": "Метка",
+        "name": "Название",
+        "description": "Описание"
+      }
     }
   }
 }

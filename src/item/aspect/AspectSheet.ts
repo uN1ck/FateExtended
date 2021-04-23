@@ -7,41 +7,43 @@ export class AspectSheet extends FateItemSheet<IAspect, Aspect> {
     static get defaultOptions(): BaseEntitySheet.Options {
         return mergeObject(super.defaultOptions,
             {
-                height: 270,
+                height: 310,
                 width: 300,
-                resizable: true
+                resizable: true,
             } as DeepPartial<BaseEntitySheet.Options>) as BaseEntitySheet.Options;
     }
 
-    // activateListeners(html: JQuery) {
-    //     html.find("#aspect-name-value")
-    //         .on("change", (event: JQuery.ChangeEvent) => {
-    //         const newValue:string = event.target.value;
-    //         this.item.
-    //         this.item.keepData({})
-    //     })
-    //     html.find("#aspect-label-value")
-    //         .on("change", (event: JQuery.ChangeEvent) => {
-    //         const newValue:string = event.target.value;
-    //     })
-    //     html.find("#aspect-description-value")
-    //         .on("change", (event: JQuery.ChangeEvent) => {
-    //         const newValue:string = event.target.value;
-    //     })
-    // }
+    get title() {
+        return this.item.data.data.name;
+    }
 
-    getData(options?: any): Promise<Item.Data<IAspect>> | Item.Data<IAspect> {
-        const superData = super.getData(options);
+    async getData(options?: any): Promise<Item.Data<IAspect>> {
+        const superData = await super.getData(options);
 
         const mergedData = {
-            ...superData, localization: {
-                label: "LBL",
-                name: "NME",
-                description: "DSCR",
-            }
+            ...superData,
         };
-        console.log("RETURNAL DATA", mergedData)
+
         return mergedData;
+    }
+
+    activateListeners(html: JQuery) {
+        super.activateListeners(html);
+        html.find("#roll-aspect-to-chat")
+            .on("click", this.rollToChat);
+    }
+
+    public rollToChat = async () => {
+        const actor = this.actor;
+        const userId = game.user?._id;
+
+        await ChatMessage.create({
+            user: userId,
+            speaker: ChatMessage.getSpeaker({actor: actor}),
+            type: CONST.CHAT_MESSAGE_TYPES.OTHER,
+            sound: CONFIG.sounds.notification,
+            content: await renderTemplate(this.messageTemplate, this.item.data),
+        })
     }
 
 }

@@ -1,25 +1,30 @@
 <form autocomplete="off" class="{{cssClass}} flexcol">
     <div class="form-group form-group-stacked">
-        <div class="form-fields">
+        <div class="form-fields fx-fixed-row">
             {{> "systems/FateExtended/templates/item/parts/TextInput.hbs"
-                    headline="aspect.form.name"
+                    headline="aspect.sheet.form.name"
                     field=data.name
                     fieldName="data.name"
             }}
         </div>
-        <div class="form-fields">
+        <div class="form-fields fx-fixed-row">
             {{> "systems/FateExtended/templates/item/parts/TextInput.hbs"
-                    headline="aspect.form.label"
+                    headline="aspect.sheet.form.label"
                     field=data.label
                     fieldName="data.label"
             }}
         </div>
-        <div class="form-fields">
+        <div class="form-fields fx-fixed-row">
             {{> "systems/FateExtended/templates/item/parts/TextArea.hbs"
-                    headline="aspect.form.description"
+                    headline="aspect.sheet.form.description"
                     field=data.description
                     fieldName="data.description"
             }}
+        </div>
+        <div class="fx-fixed-row">
+            <button style="display: block" id="roll-aspect-to-chat">
+                {{localize "aspect.sheet.buttons.roll"}} <i class="fas fa-dice"></i>
+            </button>
         </div>
     </div>
 </form>

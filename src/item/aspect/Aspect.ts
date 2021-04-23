@@ -7,7 +7,7 @@ export class Aspect extends FateItem<IAspect> {
         super.prepareData();
     }
 
-    public async keepData(newData: IAspect) {
+    public async keepData(newData: DeepPartial<IAspect>) {
         await this.update({data: newData})
     }
 
