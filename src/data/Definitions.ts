@@ -39,6 +39,3 @@ export interface ISlot {
     checked: boolean
 }
 
-export interface IItemData<D> extends Item.Data<D> {
-    //TODO: Impl
-}

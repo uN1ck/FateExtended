@@ -13,19 +13,17 @@
   ],
   "scripts": [],
   "esmodules": [
-    "FateExtended.js"
+    "system.js"
   ],
   "styles": [
-    "templates/styles/FateExtended.css",
-    "templates/styles/PointColors.css",
-    "templates/styles/FateActor.css"
+    "templates/CharList.css"
   ],
   "packs": [],
   "languages": [
     {
       "lang": "en",
       "name": "English",
-      "path": "lang/en.json"
+      "path": "languages/en.json"
     }
   ],
   "gridDistance": 1,

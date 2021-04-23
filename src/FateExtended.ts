@@ -11,13 +11,13 @@
  */
 
 // Import TypeScript modules
-import {registerSettings} from './module/settings.js';
-import {preloadTemplates} from './module/preloadTemplates.js';
-import {FateActor} from "./module/actor/FateActor";
-import {FateItem} from "./module/item/FateItem";
-import {FateActorSheet} from "./module/actor/FateActorSheet";
-import {FateItemSheet} from "./module/item/FateItemSheet";
+
 import Constants from "./constants";
+import {registerSettings} from "./module/settings";
+import {preloadTemplates} from "./module/preloadTemplates";
+import {FateItem} from "./item/FateItem";
+import {AspectSheet} from "./item/aspect/AspectSheet";
+
 
 /* ------------------------------------ */
 /* Initialize system					*/
@@ -33,18 +33,19 @@ Hooks.once('init', async function () {
 
     // Preload Handlebars templates
     await preloadTemplates();
+    // Register HandlebarsHelpers
 
     // Register custom sheets (if any)
     // Define custom Entity classes. This will override the default Actor and
     // Item classes to instead use our extended versions.
-    CONFIG.Actor.entityClass = FateActor;
+    // CONFIG.Actor.entityClass = FateActor;
     CONFIG.Item.entityClass = FateItem;
-
-    Actors.unregisterSheet("core", ActorSheet);
-    Actors.registerSheet(Constants.MODULE_NAME, FateActorSheet, {makeDefault: true});
+    //
+    // Actors.unregisterSheet("core", ActorSheet);
+    // Actors.registerSheet(Constants.MODULE_NAME, FateActorSheet, {makeDefault: true});
+    //
     Items.unregisterSheet("core", ItemSheet);
-    Items.registerSheet(Constants.MODULE_NAME, FateItemSheet, {makeDefault: true});
-
+    Items.registerSheet(Constants.MODULE_NAME, AspectSheet, {types: ["Aspect"], makeDefault: true});
 
 });
 

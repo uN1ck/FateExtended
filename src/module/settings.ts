@@ -38,7 +38,7 @@ export const registerSettings = function () {
 
     game.settings.register(Constants.MODULE_NAME, CONFIG_HEALTH_SKILL, {
         name: "Health skill",
-        hint: "Skill^ used for default health indicating",
+        hint: "Skill used for default health indicating",
         scope: "world",
         type: String,
         config: true,

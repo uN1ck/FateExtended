@@ -1,0 +1,13 @@
+input.fex-block-input {
+    display: inline-block;
+    width: 100%;
+}
+
+.fx-fixed-row {
+
+}
+
+.fx-row .fx-label {
+    margin-bottom: 0;
+    color: rgba(25, 24, 19, .8)
+}
