@@ -1,14 +1,9 @@
-<div class="fex-input-row">
-    <h2 class="fex-input-headline">
+<div class="form-group">
+    <label for="{{fieldName}}" class="form-label">
         <span>{{localize headline}}</span>
-    </h2>
-    <label for="{{fieldName}}">
-        {{#if help}}<span class="fex-help-text">{{localize help}}</span>{{/if}}
-        <textarea
-                class="fex-input"
-                name="{{fieldName}}"
-            {{#if placeholder }}placeholder="{{ localize placeholder}}" {{/if}}
-            {{#if dtype }}data-dtype="{{ dtype }}" {{/if}}
-        >{{field}}</textarea>
+        {{#if help}}<span>{{localize help}}</span>{{/if}}
+        <div class="editor-wrapper">
+            {{editor content=field target=fieldName button=true owner=owner editable=editable}}
+        </div>
     </label>
 </div>

@@ -11,3 +11,7 @@ input.fex-block-input {
     margin-bottom: 0;
     color: rgba(25, 24, 19, .8)
 }
+
+fx-any-window-wrapper {
+    all: unset
+}

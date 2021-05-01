@@ -7,8 +7,8 @@ export class AspectSheet extends FateItemSheet<IAspect, Aspect> {
     static get defaultOptions(): BaseEntitySheet.Options {
         return mergeObject(super.defaultOptions,
             {
-                height: 310,
-                width: 300,
+                height: 350,
+                width: 465,
                 resizable: true,
             } as DeepPartial<BaseEntitySheet.Options>) as BaseEntitySheet.Options;
     }

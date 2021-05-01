@@ -1,4 +1,7 @@
 import Constants from "../constants";
+import {SkillGameSetting} from "../item/skill/SkillGameSetting";
+
+//TODO: Localize?
 
 export const CONFIG_REFRESH_POINTS = "refreshPoints";
 export const CONFIG_REFRESH_POINTS_CHANGED_EVENT = "refreshPoints_changed";
@@ -47,4 +50,13 @@ export const registerSettings = function () {
             Hooks.call(CONFIG_HEALTH_SKILL_CHANGED_EVENT, {value: value})
         }
     });
+
+    game.settings.registerMenu(Constants.MODULE_NAME, "w", {
+        name: "Skills list",
+        hint: "Global available skills",
+        icon: "fas fa-list-ul",
+        type: SkillGameSetting,
+        restricted: true,
+        label: "Edit global skills list"
+    })
 }

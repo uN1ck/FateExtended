@@ -1,14 +1,15 @@
 /* eslint-disable */
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const globImporter = require("node-sass-glob-importer");
 const path = require("path");
 const glob = require("glob");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const
     allTemplates = () => {
         return glob
-            .sync("**/*.hbs", { cwd: path.join(__dirname, "system/templates") })
+            .sync("**/*.hbs", {cwd: path.join(__dirname, "system/templates")})
             .map((file) => `"systems/FateExtended/templates/${file}"`)
             .join(", ");
     };
@@ -21,7 +22,7 @@ module.exports = (env) => {
         mode: "development",
     };
 
-    const environment = { ...defaults, ...env };
+    const environment = {...defaults, ...env};
     const isDevelopment = environment.mode === "development";
 
     const config = {
@@ -78,17 +79,16 @@ module.exports = (env) => {
                     ],
                 },
                 {
-                    test: /\.(scss|css)$/,
+                    test: /\.s[ac]ss$/i,
                     use: [
-                        "style-loader",
+                        MiniCssExtractPlugin.loader,
                         {
                             loader: "css-loader",
                             options: {
                                 sourceMap: isDevelopment,
                                 url: false,
                             },
-                        },
-                        {
+                        }, {
                             loader: "sass-loader",
                             options: {
                                 sourceMap: isDevelopment,
@@ -104,8 +104,12 @@ module.exports = (env) => {
         plugins: [
             new CleanWebpackPlugin(),
             new CopyPlugin({
-                patterns: [{ from: "system" }],
+                patterns: [{from: "system"}],
             }),
+            new MiniCssExtractPlugin({
+                filename: "[name].css",
+                chunkFilename: "[id].css"
+            })
         ],
     };
 

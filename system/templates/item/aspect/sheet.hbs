@@ -1,32 +1,34 @@
-<form autocomplete="off" class="{{cssClass}} flexcol">
-    <div class="form-group form-group-stacked">
-        <div class="form-fields fx-fixed-row">
-            {{> "systems/FateExtended/templates/item/parts/TextInput.hbs"
-                    headline="aspect.sheet.form.name"
-                    field=data.name
-                    fieldName="data.name"
-            }}
+<div class="common-background" id="fex">
+    <form autocomplete="off" class="{{cssClass}}">
+        <div class="container">
+            <div class="columns">
+                <div class="column col-12">
+                    {{> "systems/FateExtended/templates/item/parts/TextInput.hbs"
+                            headline="aspect.sheet.form.name"
+                            field=data.name
+                            fieldName="data.name"
+                    }}
+                </div>
+                <div class="column col-12">
+                    {{> "systems/FateExtended/templates/item/parts/TextInput.hbs"
+                            headline="aspect.sheet.form.label"
+                            field=data.label
+                            fieldName="data.label"
+                    }}
+                </div>
+                <div class="column col-12">
+                    {{> "systems/FateExtended/templates/item/parts/TextArea.hbs"
+                            headline="aspect.sheet.form.description"
+                            field=data.description
+                            fieldName="data.description"
+                    }}
+                </div>
+                <div class="column col-12">
+                    <button class="btn btn-primary" id="roll-aspect-to-chat">
+                        {{localize "aspect.sheet.buttons.roll"}} <i class="fas fa-dice"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="form-fields fx-fixed-row">
-            {{> "systems/FateExtended/templates/item/parts/TextInput.hbs"
-                    headline="aspect.sheet.form.label"
-                    field=data.label
-                    fieldName="data.label"
-            }}
-        </div>
-        <div class="form-fields fx-fixed-row">
-            {{> "systems/FateExtended/templates/item/parts/TextArea.hbs"
-                    headline="aspect.sheet.form.description"
-                    field=data.description
-                    fieldName="data.description"
-            }}
-        </div>
-        <div class="fx-fixed-row">
-            <button style="display: block" id="roll-aspect-to-chat">
-                {{localize "aspect.sheet.buttons.roll"}} <i class="fas fa-dice"></i>
-            </button>
-        </div>
-    </div>
-</form>
-
-
+    </form>
+</div>

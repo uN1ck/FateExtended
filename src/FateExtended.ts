@@ -17,7 +17,7 @@ import {registerSettings} from "./module/settings";
 import {preloadTemplates} from "./module/preloadTemplates";
 import {FateItem} from "./item/FateItem";
 import {AspectSheet} from "./item/aspect/AspectSheet";
-
+import '/system/templates/styles/core.sass'
 
 /* ------------------------------------ */
 /* Initialize system					*/

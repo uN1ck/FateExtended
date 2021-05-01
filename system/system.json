@@ -16,7 +16,7 @@
     "system.js"
   ],
   "styles": [
-    "templates/CharList.css"
+    "main.css"
   ],
   "packs": [],
   "languages": [
